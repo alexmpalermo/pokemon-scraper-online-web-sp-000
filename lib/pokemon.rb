@@ -18,9 +18,10 @@ class Pokemon
     info = db.execute("SELECT * FROM pokemon WHERE id = ?", id).flatten
     name = info[1]
     type = info[2]
+    hp = info[3]
     
 
-    object = Pokemon.new(id: id, name: name, type: type, db: db)
+    object = Pokemon.new(id: id, name: name, type: type, db: db, hp: hp)
   end
   
   def alter_hp(id, hp)
